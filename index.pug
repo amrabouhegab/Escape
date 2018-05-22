@@ -1,0 +1,234 @@
+include mixins
+doctype html
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title Escape
+		link(rel='stylesheet' href="css/fontawesome-all.min.css")
+		link(rel='stylesheet' href="css/bootstrap.min.css")
+		link(rel='stylesheet' href="css/compiled/home.css")
+		link(rel='stylesheet' href="css/lib/normalize.css")
+		link(href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet")
+	body
+		//Start Header
+		header
+			.overlay
+			div.container
+				div.row
+					//Start Logo
+					.col-6.col-lg-2.logo
+						span.logo-icon
+							i.fab.fa-telegram-plane
+						span.logo-name Escape
+					//End Logo
+					//Start Navbar
+					nav.navbar.navbar-expand-lg.col-6.col-lg-10
+						button.navbar-toggler(data-toggle="collapse", data-target="#mynav" aria-expand="false")
+							span.navbar-toggler-icon
+								i.fa.fa-bars
+						.mynavbar#mynav
+							ul.navbar-nav
+								li.nav-item
+									a.nav-link(href="#") Home
+								li.nav-item
+									a.nav-link(href="#", data-scroll="services") Services
+								li.nav-item
+									a.nav-link(href="#", data-scroll="clients") Clients
+								li.nav-item
+									a.nav-link(href="#", data-scroll="team") Team
+								li.nav-item
+									a.nav-link(href="#", data-scroll="contact") Contact
+					//End Navbar
+					//Start Header Caption
+					.caption
+						p.lead Can you build the websites of my dreams ?
+						h1 Yup, We Can Do That.
+					//End Header Caption
+					//Start Learn Button
+					.learn-more
+						button.btn.mybtn Learn More
+					//End Learn Button
+		//Start About
+		.about#about
+			.container
+				.row
+					.col-12.col-sm-7.col-lg-8.about-cap
+						h1.about-title Web
+							span  Development
+						p.about-body
+							|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							|tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							|quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							|consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+						p.about-body
+							|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							|tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+							|quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					.col-12.col-sm-5.col-lg-4.about-icon
+						span
+							i.fas.fa-code-branch
+			.about-two
+				.container
+					.row
+						.col-12.col-sm-5.col-lg-4.about-icon.about2-icon
+							span
+								i.far.fa-user
+						.col-12.col-sm-7.col-lg-8.about-cap.about2-cap
+							h1.about-title Identity
+								span  Branding
+							p.about-body
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								|tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								|quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+								|consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+							p.about-body
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								|tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								|quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		//End About
+		//Start Services
+		.services#services
+			.container
+				.row
+					+service("fas fa-male", "Branding & Identity", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.")
+					+service("far fa-window-maximize", "Web Design", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.")
+				.row
+					+service("fas fa-mobile-alt", "Mobile Development", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.")
+					+service("fas fa-video", "Animations", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.")
+				.row
+					+service("fas fa-star", "UI/UX", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.")
+					+service("fas fa-camera", "Photography", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.")
+		//End Services
+		//Start Customers
+		.customers#clients
+			h1.text-center Awesome
+				span  Clients
+			p.sub-title.text-center See what nice things our clients said about us.
+			.container
+				.row
+					.col-3.customer
+						+avatar("imgs/avatar.png")
+					.col-9
+						.customer-say
+							blockquote 
+								i.fas.fa-quote-left
+								|
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								|tempor incididunt ut labore et dolore magna  tempor incididunt ut labore
+								|et dolore magna aliqua.
+								|
+								i.fas.fa-quote-right
+							p.cust-name - Jamie Richardson, Founder Of Cocoa Media
+				.row
+					.col-9
+						.customer-say
+							blockquote 
+								i.fas.fa-quote-left
+								|
+								|Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								|tempor incididunt ut labore et dolore magna  tempor incididunt ut labore
+								|et dolore magna aliqua.
+								|
+								i.fas.fa-quote-right
+							p.cust-name - Jamie Richardson, Founder Of Cocoa Media
+					.col-3.customer
+						+avatar("imgs/avatar.png")
+		//End Customers
+		//Start Brands
+		.brands
+			.container
+				.row
+					.col-md.col-6.brand.brand01
+						img(src="imgs/brands/envato.jpg")
+					.col-md.col-6.brand.brand02
+						img(src="imgs/brands/wordpress.jpg")
+					.col-md.col-6.brand
+						img(src="imgs/brands/tuts.jpg")
+					.col-md.col-6.brand
+						img(src="imgs/brands/microlancer.jpg")
+		//End Brands
+		//Start Our Team
+		.team#team
+			h1.text-center Awesome
+				span  Team
+			p.sub-title.text-center The wonderful people make work enjoyable.
+			.container
+				.row
+					.col.col-lg-4.member
+						.avatar
+							img(src="imgs/avatar.png")
+						h6.text-center Kimberly Thompson
+						p.text-center.sub-title Marketer
+						ul.list-unstyled.text-center
+							li.fab.fa-facebook-f
+							li.fab.fa-twitter
+							li.fab.fa-pinterest-p
+					.col.col-lg-4.member
+						.avatar
+							img(src="imgs/avatar.png")
+						h6.text-center Rico Massimo
+						p.text-center.sub-title Coder
+						ul.list-unstyled.text-center
+							li.fab.fa-facebook-f
+							li.fab.fa-twitter
+							li.fab.fa-pinterest-p
+					.col.col-lg-4.member
+						.avatar
+							img(src="imgs/avatar.png")
+						h6.text-center Uku Masson
+						p.text-center.sub-title Graphic Designer
+						ul.list-unstyled.text-center
+							li.fab.fa-facebook-f
+							li.fab.fa-twitter
+							li.fab.fa-pinterest-p
+				.team-info.text-center
+					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						|tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						|quis nostrud exercitation ullamco laboris nisi ut.
+		//End Our Team
+		//Start Footer
+		.footer#contact
+			.contact-us
+				.container
+					.row
+						.col-12.col-md-6
+							.contact
+								h1 Say
+									span  Hello
+								p.sub-title Don't be shy, drop us an email and say hello! We are 
+									|really nice bunch of people :)
+								.social-list
+									.row 
+										.col-6
+											+social("fa fa-mobile-alt", "(414) 555-0000")
+										.col-6
+											+social("fa fa-envelope", "hello@escape.com")
+										.col-6
+											+social("fab fa-twitter", "@escape")
+										.col-6
+											+social("fab fa-facebook-f", "facebook/escape")
+										.col-6
+											+social("fab fa-google-plus-g", "plus.com/escape")
+										.col-6
+											+social("fab fa-pinterest-p", "pinterest/escape")
+						.col-12.col-md-6
+							.form
+								form
+									.form-group
+										input.form-control(type="text", placeholder="Your Name *" 
+										required="required")
+									.form-group
+										input.form-control(type="text", placeholder="Your Email *" 
+										required="required")
+									.form-group
+										textarea.form-control( placeholder="Your Message *" required="required")
+									button.mybtn.btn(type="submit") Send
+			.copy-right.col-12
+				.container
+					.copy
+						p.text-center &copy; 2018 Escape by Amr Sadat
+		//End Footer
+		script(src='js/lib/popper.min.js')
+		script(src='js/lib/jquery-3.3.1.min.js')
+		script(src='js/lib/bootstrap.min.js')
+		script(src='js/plugins.js')

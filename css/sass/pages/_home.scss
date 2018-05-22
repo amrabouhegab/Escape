@@ -1,0 +1,648 @@
+
+/*Start Global rules*/
+*{
+	@include prefixer(box-sizing , border-box, webkit moz o);
+	margin:0;
+	padding: 0
+}
+/*End Global rules*/
+
+/*Start Header*/
+header{
+	.logo{
+		padding: 25px 0;
+		.logo-icon{
+			padding: 5px;
+			font: {
+				size: 30px;
+			}
+		}
+		.logo-name{
+			font: {
+				size: 30px;
+				weight: $bold;
+				family: 'Baloo' , 'Tahoma';
+			}
+		}
+	}
+	color: #FFF;
+	background: url("../../imgs/background.jpg") no-repeat;
+	@include prefixer(background-size , cover, webkit moz o);
+	position: relative;
+	.overlay{
+		@include overlay(#000, 0.5);
+	}
+	.row{
+		justify-content: flex-end;
+		.navbar{
+			.navbar-toggler{
+				color: #FFF;
+				cursor: pointer;
+				font-size: 30px;
+				@media #{$md}{
+					position: absolute;
+					right: 0;
+					top: 30px;
+				}
+			}
+			.mynavbar{
+				display: flex;
+				flex-basis: 100%;
+			    -ms-flex-align: center;
+			    align-items: center;
+				justify-content: flex-end;
+				padding: 20px 0;
+				@media #{$md}{
+					position: fixed;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					right: 0;
+					background: rgba(187, 187, 187, 0.4);
+					z-index: 9999;
+					display: none;
+				}
+				.navbar-nav{
+					@media #{$md}{
+						background: #111111;
+						position: fixed;
+						top: 0;
+						right:-250px;
+						width: 250px;
+						height: 100%;
+						padding: $margin 15px 15px 15px;
+					}
+					.nav-item{
+						@media #{$md}{
+							width: 100%;
+							text-align: center;
+						}
+						.nav-link{
+							display: inline-block;
+							padding: 10px;
+							color: #FFF;
+							font-weight: $bold;
+							font-size: 18px;
+							text-decoration: none;
+							position: relative;
+							&:before{
+								content: "";
+								position: absolute;
+								width: 0%;
+								height: 3px;
+								background: #FFF;
+								top: 0;
+								left: 0;								
+							}
+							&:after{
+								content: "";
+								position: absolute;
+								width: 0%;
+								height: 3px;
+								background: #FFF;
+								bottom: 0;
+								right: 0;								
+							}
+							&:hover:before{
+								@include prefixer(animation, link .5s ease-in-out, webkit moz o);
+								@media #{$md}{
+									display: none;
+								}
+							}
+							&:hover:after{
+								@include prefixer(animation, link .5s ease-in-out, webkit moz o);
+								@media #{$md}{
+									display: none;
+								}
+							}
+							@media #{$md}{
+								width: 100%;
+								margin: 15px 0;
+								&:hover{
+									background: #FFF;
+									color: #111111;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.caption{
+			z-index: 2;
+			width: 100%;
+			margin-top: 10%;
+			@media #{$sm}{
+				margin-top: 15%;
+			}
+			p{
+				color: #ccc;
+				text-align: center;
+				font: {
+					size: 24px;
+				}
+				@media #{$sm}{
+					font-size: 22px;
+				}
+			}
+			h1{
+				text-align: center;
+				font: {
+					size: 60px;
+				}
+				@media #{$sm}{
+					font-size: 46px;
+				}
+			}
+
+		}
+		.learn-more{
+			display: flex;
+			z-index: 2;
+			width: 100%;
+			justify-content: center;
+			.mybtn{
+			    padding: 15px 50px;
+			    margin-top: 8%;
+			    @media #{$sm}{
+			    	margin-top: 15%;
+			    }
+			    &:hover{
+			    	color: #111111;
+			    	background: #FFF;
+			    }
+			}
+		}
+	}
+}
+/*End Header*/
+/*Start About*/
+.about{
+	.about-cap{
+		padding: $margin 60px $margin 0;
+		@media #{$md}{
+			padding: $margin 0 $margin 0;
+		}
+		@media #{$xs}{
+			padding: $margin 20px;
+		}
+		.about-title{
+			font:{
+				size: $headsize;
+				weight: 100;
+			}
+			margin-bottom: 40px;
+			span{
+				font-weight: $bold;
+			}
+			@media #{$md}{
+				font-size: 50px
+			}
+			@media #{$sm}{
+				font-size: 34px
+			}
+			@media #{$xs}{
+				font-size: 40px
+			}
+		}
+		.about-body{
+			color: $paragcolor;
+			&:last-of-type{
+				margin-top: 40px;
+			}
+			@media #{$sm}{
+				font-size: 15px;
+			}
+		}
+	}
+	.about-icon{
+		font:{
+			size: 250px;
+		}
+		 @media #{$sm}{
+		 	font-size: 180px;
+		 }
+		 @media #{$xs}{
+		 	display: none;
+		 }
+		color: $graycolor;
+		span{
+		    margin-left: 60px;
+		    display: inline-block;
+		    margin-top: 15%;
+		    @media #{$md}{
+		    	margin-top: 20%;
+		    }
+		    @media #{$sm}{
+		    	margin-top: 50%;
+		    }
+		}
+	}
+	.about-two{
+		background: $grayback;
+		.about2-icon{
+			span{
+				margin-left: 0;
+				margin-right: 60px;
+			}
+		}
+		.about2-cap{
+			@media #{$md}{
+				padding: $margin 0 $margin 15px;
+			}
+			@media #{$sm}{
+				padding: $margin 0 $margin 30px;
+			}
+		}
+	}
+}
+
+/*End About*/
+/*Start Services*/
+.services{
+	padding: $margin 0;
+	.service{
+		padding: 10px $margin 10px 0;
+		display: flex;
+		justify-content: space-between;
+		@media #{$md}{
+			padding: 10px 0;
+		}
+		@media #{$xs}{
+			padding: 10px 20px;
+		}		
+		.serv-icon{
+			.circle{
+			    display: inline-block;
+			    background: #000;
+			    color: #FFF;
+			    text-align: center;
+			    width: 70px;
+			    height: 70px;
+			    line-height: 66px;
+				font:{
+					size: 40px;
+				}
+				border-radius: 50%;
+				@media #{$sm}{
+				    width: 50px;
+				    height: 50px;
+				    line-height: 50px;
+				    font-size: 26px;
+				}
+				@media #{$xs}{
+				    width: 70px;
+				    height: 70px;
+				    line-height: 66px;
+				    font-size: 30px;
+				}
+				@media#{$smph}{
+				    width: 60px;
+				    height: 60px;
+				    line-height: 60px;
+				    font-size: 28px;
+				}
+			}
+		}
+		.serv-cap{
+			.serv-title{
+				@media #{$sm}{
+				    font-size: 18px;
+				}
+			}
+			.serv-body{
+				color: $paragcolor;
+				@media #{$sm}{
+				    font-size: 15px;
+				}
+				@media #{$xs}{
+				    width: 80%;
+				    font-size: 18px;
+				}
+			}
+		}
+	}
+	
+}
+/*Start Services*/
+/*Start Cutomers*/
+.customers{
+	h1{
+		font:{
+			size: $headsize;
+			weight: 100;
+		}
+		span{
+			font-weight: $bold;
+		}
+	}
+	.sub-title{
+		color: $paragcolor;
+		font-size: 18px;
+		margin-bottom: $margin;
+	}
+	padding: $margin 0;
+	background: $grayback;
+	.customer{
+		.avatar{
+			@include avatar;
+			@media#{$smph}{
+				width: 120px;
+				height: 120px;
+			}
+		}
+	}
+	.customer-say{
+		position: relative;
+		background: #FFF;
+		padding: 20px $margin;
+		@media #{$md}{
+		    padding: 15px 30px;
+    		margin-left: 15%;
+		}
+		@media #{$sm}{
+    		margin-left: 35%;
+		}
+		@media #{$xs}{
+    		padding: 15px;
+		}
+		blockquote{
+			color: $paragcolor;
+			font-size: 20px;
+			.fa-quote-left,
+			.fa-quote-right{
+				padding: 5px;
+				margin: 5px 0;
+			}
+			@media #{$md}{
+				font-size: 16px;
+			}
+			@media #{$xs}{
+				font-size: 14px;
+			}
+		}
+		.cust-name{
+			color: #3535e4;
+		}
+	}
+	.row:first-of-type{
+		margin-bottom: $margin;
+		.customer-say{
+			&:before{
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-right: 30px solid #FFF;
+				border-top: 30px solid $grayback;
+				border-bottom: 30px solid $grayback;
+				left: -30px;
+				top: 15%;
+				@media#{$smph}{
+					top: 17%;
+				}
+			}
+
+		}
+	}
+	.row:last-of-type{
+		overflow: hidden;
+		.avatar{
+			float: right;
+		}
+		.customer-say{
+			@media #{$md}{
+				margin-left: 0;
+			    margin-right: 15%;
+			}
+			@media #{$sm}{
+				margin-left: 0;
+			    margin-right: 35%;
+			}
+			&:after{
+				content: "";
+				position: absolute;
+				width: 0;
+				height: 0;
+				border-left: 30px solid #FFF;
+				border-top: 30px solid $grayback;
+				border-bottom: 30px solid $grayback;
+				right: -30px;
+				top: 15%;
+				@media#{$smph}{
+					top: 17%;
+				}
+			}
+		}
+	}
+
+}
+/*End Customers*/
+/*Start Brands*/
+.brands{
+	padding: $margin 0;
+	.brand{
+		img{
+			width: 70%;
+	    	height: 80%;
+	    	margin: auto;
+	    	display: block;
+		}
+	}
+	.brand01,
+	.brand02{
+		@media#{$sm}{
+			margin-bottom: 5%;
+		}
+		
+	}
+	
+}
+/*Start Brands*/
+/*Start Our Team*/
+.team{
+	background: #111111;
+	padding: $margin 0;
+	color: #fff;
+	h1{
+		font:{
+			size: $headsize;
+			weight: 100;
+		}
+		span{
+			font-weight: $bold;
+		}
+	}
+	.sub-title{
+		color: $paragcolor;
+		font-size: 18px;
+		margin-bottom: $margin;
+	}
+	.member{
+		&:not(:first-child){
+			@media#{$sm}{
+				margin-top: 30px;
+			}
+		}
+		padding: 0 $margin;
+		.avatar{
+			margin: auto;
+			@include avatar;
+			@media#{$lg}{
+				width: 180px;
+				height: 180px;
+			}
+			@media#{$smph}{
+				width: 150px;
+				height: 150px;
+			}
+		}
+		h6{
+			margin-top: 20px;
+		}
+		.sub-title{
+			margin-bottom: 0;
+		}
+		ul{
+			li{
+				color: #FFF;
+			    width: 50px;
+			    font-size: 22px;
+			    height: 50px;
+			    line-height: 44px;
+			    border: 4px solid #FFF;
+			    border-radius: 50%;
+			    margin: 5px;
+			    cursor: pointer;
+			    @include prefixer(transition, all .5s ease-in-out, webkit moz o);
+			    &:hover{
+			    	color: #111111;
+			    	background: #FFF;
+			    }
+			    @media#{$lg}{
+			    	width: 40px;
+			    	height: 40px;
+			    	line-height: 33px;
+			    	font-size: 18px;
+			    }
+			}
+		}
+
+	}
+	.team-info{
+		margin-top: 40px;
+		width: 100%;
+		p{
+			width: 70%;
+			margin: auto;
+			@media#{$sm}{
+				width: 90%;
+			}
+		}
+	}
+}
+/*End Our Team*/
+/*Start Footer*/
+.footer{
+	.contact-us{
+		padding: $margin 0;
+	}
+	color: #FFF;
+	background: #7690c5;
+	.contact{
+		@media#{$sm}{
+	    	padding-bottom: 50px;
+	    }
+		h1{
+			font:{
+				size: $headsize;
+				weight: 100;
+			}
+			margin-bottom: 30px;
+			span{
+				font-weight: $bold;
+			}
+		}
+		.sub-title{
+			font-size: 18px;
+			margin-bottom: 40px;
+		}
+	}
+	.social-list{
+		.social{
+			font-size: 16px;
+			margin: 10px 25px 10px 0;
+			@media#{$lg}{
+		    	margin: 10px 0px ;
+		    }
+		    @media#{$smph}{
+		    	font-size: 14px;
+		    }
+			.social-icon{
+			    font-size: 26px;
+			    margin: 0px 30px 0 0;
+			    display: inline-block;
+			    width: 20px;
+			    @media#{$md}{
+			    	width: 100%;
+			    }
+			    @media#{$sm}{
+			    	width: 20px;
+			    }
+			    @media#{$smph}{
+			    	width: 70%;
+			    }
+			}
+		}
+	}
+	.form{
+		input[type="text"]{
+			height: 50px;
+		}
+		textarea{
+			height: 200px;
+			@media#{$md}{
+				height: 260px;
+			}
+			@media#{$sm}{
+				height: 200px;
+			}
+		}
+		button{
+			padding: 10px 20px;
+			width: 30%;
+			font:{
+				size: 20px;
+				weight: bold; 
+			}
+			&:hover{
+				background: #FFF;
+				color: #7690c5;
+			}
+			@media#{$xs}{
+				width: 50%;
+			}
+		}
+	}
+	.copy-right{
+		.copy{
+			padding: 40px 0;
+			border-top: .5px solid #f7f7f73d;
+			p{
+				margin: 0;
+			}
+		}
+	}
+}
+/*End Footer*/
+
+/*Start Animations*/
+@include animation(link) {
+	0%{
+		width:0%;
+	}
+	100%{
+		width: 100%;
+	}
+}
+/*End Animations*/

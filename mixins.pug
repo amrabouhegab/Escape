@@ -1,0 +1,25 @@
+
+//-Mixin for generating a service
+mixin service(cl, title, body)
+	.col-12.col-sm-6.service
+		.row
+			.serv-icon.col-3
+				span.circle
+					i(class= cl)
+			.serv-cap.col-9
+				h5.serv-title #{title}
+				p.serv-body.
+					#{body}
+
+//-mixin for Avatar Pictures
+mixin avatar(imgsrc)
+	.avatar
+		img(src= imgsrc)
+
+//-Mixin For Generating contact element in footer
+mixin social(cal, text)
+	.social
+		span.social-icon
+			i(class= cal)
+		span.social-text.
+			#{text}
